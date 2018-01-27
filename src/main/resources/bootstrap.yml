@@ -1,0 +1,19 @@
+# spring application name should be the service name
+# to be registered in the eureka discovery server
+spring:
+  application:
+    name: zuul-client
+# configuration fro spring cloud config server
+  cloud:
+    config:
+      uri: http://localhost:8888
+# configuration for eureka discovery client
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:1111/eureka}
+  instance:
+    preferIpAddress: true
+# other configuration
+server:
+  port: 9999
