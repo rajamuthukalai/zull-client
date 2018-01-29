@@ -8,3 +8,15 @@ spring:
     config:
       uri: http://localhost:8888
 # applicationc configuration is externalized in biller-service.properties in config server
+
+zuul:
+  routes:
+    biller: 
+      path: /api/b/**
+      url: http://localhost:9001/api/b
+    category: 
+      path: /api/c/**
+      url: http://localhost:9002/api/c
+ribbon:
+  eureka:
+    enabled: false
