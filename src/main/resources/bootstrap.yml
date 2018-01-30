@@ -9,6 +9,18 @@ spring:
       uri: http://localhost:8888
 # applicationc configuration is externalized in biller-service.properties in config server
 
+security:
+  basic:
+    enabled: false
+  oauth2:
+    client:
+      client-id: ClientId
+      client-secret: secret
+      access-token-uri: http://localhost:9001/auth/oauth/token
+      user-authorization-uri: http://localhost:9001/auth/oauth/authorize
+    resource:
+      user-info-uri: http://localhost:9001/auth/principal
+
 zuul:
   routes:
     biller: 
